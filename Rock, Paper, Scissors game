@@ -1,0 +1,93 @@
+namespace RockPaperScissors
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool gameOver = false;
+
+            while (gameOver == false)
+            {
+                Random random = new Random();
+                int ran = random.Next(1, 4);
+                string computer = Convert.ToString(ran);
+                switch (ran)
+                {
+                    case 1:
+                        computer = "rock";
+                        break;
+                    case 2:
+                        computer = "paper";
+                        break;
+                    case 3:
+                        computer = "scissors";
+                        break;
+                }
+
+                Console.WriteLine("Rock, Paper or Scissors? ");
+                string player = Console.ReadLine();
+                player = player.ToLower();
+                Console.WriteLine("the machine has chosen " + computer);
+
+                string answer = player + computer;
+
+                switch (answer)
+                {
+                    case "rockrock":
+                        Console.WriteLine("it a draw try again");
+                        gameOver = false;
+                        break;
+                    case "rockpaper":
+                        Console.WriteLine("it a loss");
+                        gameOver = true;
+                        break;
+                    case "rockscissors":
+                        Console.WriteLine("it a win");
+                        gameOver = true;
+                        break;
+                    case "scissorsrock":
+                        Console.WriteLine("Its a loss");
+                        gameOver = true;
+                        break;
+                    case "scissorspaper":
+                        Console.WriteLine("it a win");
+                        gameOver = true;
+                        break;
+                    case "scissorsscissors":
+                        Console.WriteLine("it a draw");
+                        gameOver = false;
+                        break;
+                    case "paperpaper":
+                        Console.WriteLine("it a draw");
+                        gameOver = false;
+                        break;
+                    case "paperscissors":
+                        Console.WriteLine("it a lose");
+                        gameOver = true;
+                        break;
+                    case "paperrock":
+                        Console.WriteLine("it a win");
+                        gameOver = true;
+                        break;
+                }
+                Console.WriteLine("would you like to play again? yes or no? ");
+                string restart = Console.ReadLine();
+                restart = restart.ToLower();
+
+                if (restart == "yes")
+                {
+                    gameOver = false;
+                }
+                else if (restart == "no")
+                {
+                    gameOver = true;
+                }
+            }
+
+            Console.WriteLine("goodbye");
+
+
+            Console.ReadKey();
+        }
+    }
+}
