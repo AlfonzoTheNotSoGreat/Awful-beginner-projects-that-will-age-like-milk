@@ -1,0 +1,28 @@
+namespace EToTheNthNumber
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many digits of e to 10 do you want? ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            string E = "2718281828";
+
+           
+
+            if(num > 11) 
+            {
+                Console.WriteLine("Plus put in a number below 10");
+            }
+            else 
+            {
+                string eNum = E.Substring(0, num);
+                string eNum2 = eNum.Insert(1, ".");
+                Console.WriteLine(eNum2);
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
