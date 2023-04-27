@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mortgage_Calculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //asking for information
+            Console.WriteLine("Hello welcome to Mortgage Calculator");
+            Console.WriteLine("What is the loan value?");
+            double principal = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("What is the term of the loan in years?");
+            double term = Convert.ToDouble(Console.ReadLine());
+            double months = 12;
+            double weeks = 52;
+
+            Console.WriteLine("What is the interest?");
+            double interest = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Is the compounding interval Monthly, Weekly or Daily?");
+            string interval = Console.ReadLine();
+            interval.ToLower();
+
+
+            double monthlyInterest = interest / 100;
+            double monthlyinterest2 = monthlyInterest / 12;
+            double n = months * term;
+            double r1 = 1 + monthlyinterest2;
+            double exponents = Math.Pow(r1, n);
+            double top = monthlyinterest2 * exponents;
+            double bottom = exponents - 1;
+            double overall = top / bottom;
+            double monthlyPay = principal * overall;
+
+            switch (interval)
+            {
+                case "monthly":
+                    Console.WriteLine("£" + monthlyPay);
+                    Console.WriteLine("it will take you " + n + " months/" + term + " years to pay back the loan");
+                    break;
+                case "weekly":
+                    double weeklyPay = monthlyPay * 12;
+                    weeklyPay /= weeks;
+                    Console.WriteLine("£" + weeklyPay);
+                    break;
+                case "daily":
+                    double dailyinterest = interest / 365;
+                    double dailyinterest2 = dailyinterest / 100;
+                    double dailyinterest3 = principal * dailyinterest2;
+                    Console.WriteLine(dailyinterest3);
+                    break;
+            }
+    }    }
+}
