@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NumberGuessingGame
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Random random = new Random();
+            int ran = random.Next(1, 101);
+
+            Console.WriteLine("Enter a random number between 1 to 100");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int attempt = 0;
+
+            while (num < ran || num > ran)
+            {
+                if (num < ran)
+                {
+                    Console.WriteLine(num + " is too low");
+                }
+                else if (num > ran)
+                {
+                    Console.WriteLine(num + " is too high");
+                }
+                attempt++;
+                num = Convert.ToInt32(Console.ReadLine());
+            }
+
+
+            if (num == ran)
+            {
+                Console.WriteLine("You win the random num is " + ran);
+                Console.WriteLine("You made " + attempt + " attempts");
+            }
+            Console.ReadKey();
+        }
+    }
+}
