@@ -1,0 +1,251 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fibonacci_Sequence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter a number and this program will generate the Fibonacci sequence to that number or to the Nth number of 1000 ");
+            int enter = Convert.ToInt32(Console.ReadLine());
+
+            int num0 = 0;
+            int num1 = 1;
+            int num2 = 1;
+            int num3 = 2;
+            int num4 = 3;
+            int num5 = 5;
+            int num6 = 8;
+            int num7 = 13;
+            int num8 = 21;
+            int num9 = 34;
+            int num10 = 55;
+            int num11 = 89;
+            int num12 = 144;
+            int num13 = 233;
+            int num14 = 337;
+            int num15 = 610;
+            int num16 = 987;
+
+            if (enter >= 1001)
+            {
+                Console.WriteLine("The Nth number is 1000");
+            }
+            else if (enter >= 987)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+                Console.WriteLine(num12);
+                Console.WriteLine(num13);
+                Console.WriteLine(num14);
+                Console.WriteLine(num15);
+                Console.WriteLine(num16);
+            }
+            else if (enter >= 610)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+                Console.WriteLine(num12);
+                Console.WriteLine(num13);
+                Console.WriteLine(num14);
+                Console.WriteLine(num15);
+            }
+            else if (enter >= 337)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+                Console.WriteLine(num12);
+                Console.WriteLine(num13);
+                Console.WriteLine(num14);
+            }
+            else if (enter >= 233)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+                Console.WriteLine(num12);
+                Console.WriteLine(num13);
+            }
+            else if (enter >= 144)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+                Console.WriteLine(num12);
+            }
+            else if (enter >= 89)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+                Console.WriteLine(num11);
+            }
+            else if (enter >= 55)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+                Console.WriteLine(num10);
+            }
+            else if (enter >= 34)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+                Console.WriteLine(num9);
+            }
+            else if (enter >= 21)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+                Console.WriteLine(num8);
+            }
+            else if (enter >= 13)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+                Console.WriteLine(num7);
+            }
+            else if (enter >= 8)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+                Console.WriteLine(num6);
+            }
+            else if (enter >= 5)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+                Console.WriteLine(num5);
+            }
+            else if (enter >= 3)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+                Console.WriteLine(num4);
+            }
+            else if (enter >= 2)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+                Console.WriteLine(num3);
+            }
+            else if (enter >= 1)
+            {
+                Console.WriteLine(num0);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+            }
+            else if (enter >= 0)
+            {
+                Console.WriteLine(num0);
+            }
+            else
+            {
+                Console.WriteLine("Please enter a number above 0 ");
+            }
+
+
+            if (enter >= 0)
+            {
+                Console.WriteLine("That is the Nth number up to " + enter);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
