@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Calculator_simple
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Simple calculator program that adds, divides, subtracts and multiplies two numbers.
+
+            bool calculatorOn = true;
+            Console.WriteLine("please type in a number");
+            double num = Convert.ToDouble(Console.ReadLine());
+            while (calculatorOn == true)
+            {
+                Console.WriteLine("Would you like to +,-,/ or * this number?");
+                char symbol = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine(symbol + " by what other number?");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+
+                switch (symbol)
+                {
+                    case '+':
+                        num += num2;
+                        break;
+                    case '-':
+                        num -= num2;
+                        break;
+                    case '*':
+                        num *= num2;
+                        break;
+                    case '/':
+                        num /= num2;
+                        break;
+                }
+                Console.WriteLine(num);
+
+                Console.WriteLine("Would you like to carry on? Type Yes or No? ");
+                string answer = Console.ReadLine();
+                answer = answer.ToLower();
+
+                if (answer == "yes")
+                {
+                    calculatorOn = true;
+                }
+                else if (answer == "no")
+                {
+                    calculatorOn = false;
+                }
+            }
+
+
+            Console.WriteLine("Goodbye friend");
+
+            Console.ReadKey();
+        }
+    }
+ }
