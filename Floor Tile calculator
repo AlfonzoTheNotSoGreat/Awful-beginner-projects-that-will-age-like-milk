@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Length__times_width_times_cost
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome to tile calculator");
+            Console.ReadLine();
+
+            Console.WriteLine("What is the width?");
+            double width = Convert.ToDouble(Console.ReadLine());
+
+            while (width == 0)
+            {
+                Console.WriteLine("What is the width");
+                width = Convert.ToDouble(Console.ReadLine());
+            }
+
+            Console.WriteLine("What is the length?");
+            double length = Convert.ToDouble(Console.ReadLine());
+            while (length == 0)
+            {
+                Console.WriteLine("What is the length");
+                length = Convert.ToDouble(Console.ReadLine());
+            }
+
+            double area = width * length;
+            Console.WriteLine("The area is " + area);
+
+            Console.WriteLine("What is the cost of a tile?");
+            double money = Convert.ToDouble(Console.ReadLine());
+            while (money == 0)
+            {
+                Console.WriteLine("What is the cost");
+                money = Convert.ToDouble(Console.ReadLine());
+            }
+            double cost = area * money;
+
+            Console.WriteLine("The total floor cost will be " + '£' + cost);
+            Console.ReadKey();
+
+        }
+    }
+}
