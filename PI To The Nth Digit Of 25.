@@ -1,0 +1,28 @@
+namespace PieToTheNthDigit_real_
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How many digits of pi to 25 do you want? ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            string pie = "3141592653589793238462643";
+
+          
+
+            if (num > 25)
+            {
+                Console.WriteLine("Please put in a number below 25");
+            }
+            else 
+            {
+                string pieNum = pie.Substring(0, num);
+                string pieNum2 = pieNum.Insert(1, ".");
+                Console.WriteLine(pieNum2);
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
