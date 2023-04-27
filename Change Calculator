@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Change_till
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("How much does the item cost? ");
+            double price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("How much money are you giving me?");
+            double payment = Convert.ToDouble(Console.ReadLine());
+            double money = price - payment;
+
+            while (money > 0)
+            {
+                Console.WriteLine("I need more money");
+                payment = Convert.ToDouble(Console.ReadLine());
+                money = price - payment;
+            }
+
+            if (money == 0)
+            {
+                Console.WriteLine("I owe you no change sir");
+            }
+            else
+            {
+                string money1 = Convert.ToString(money);
+                money1 = money1.Replace("-", "£");
+                Console.WriteLine("I owe you " + money1 + " in change");
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
