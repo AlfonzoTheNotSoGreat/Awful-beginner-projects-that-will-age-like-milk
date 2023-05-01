@@ -1,0 +1,31 @@
+}
+
+double pie = Math.PI / 180;
+longitudeA = longitudeA * pie;
+longitudeB = longitudeB * pie;
+latitudeA = latitudeA * pie;
+latitudeB = latitudeB * pie;
+
+double arccos = Math.Acos((Math.Sin(latitudeA) * Math.Sin(latitudeB)) + Math.Cos(latitudeA) * Math.Cos(latitudeB) * Math.Cos(longitudeA - longitudeB));
+double answer = 3440.1 * arccos;
+
+Console.WriteLine("What unit of distance would you like to display this information? nautical miles, miles or kilometers? ");
+string units = Console.ReadLine();
+units = units.ToLower();
+
+switch (units)
+{
+    case "nautical miles":
+        Console.WriteLine("The distance between " + a + " and " + b + " in nautical miles is " + answer);
+        break;
+    case "miles":
+        answer = answer * 1.15078;
+        Console.WriteLine("The distance between " + a + " and " + b + " in miles is " + answer);
+        break;
+    case "kilometers":
+        answer = answer * 1.852;
+        Console.WriteLine("The distance between " + a + " and " + b + " in kilometers is " + answer);
+        break;
+}
+
+Console.ReadKey();
