@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Unit_converter_for_temp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double temp2 = 0;
+            double temp3 = 0;
+            double temp4 = 0;
+            double five = 0;
+
+            Console.WriteLine("What would you like to convert from? fahrenheit, kelvin and degree celsius?");
+            string startTemp = Console.ReadLine();
+            Console.WriteLine("What is the temperature in " + startTemp);
+            double temp = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("What would you like to convert " + temp + " " + startTemp + " to? fahrenheit, kelvin and degree celsius?");
+            string endTemp = Console.ReadLine();
+
+            string finalTemp = startTemp + endTemp;
+            finalTemp = finalTemp.ToLower();
+
+            switch (finalTemp)
+            {
+                case "fahrenheitkelvin":
+                    temp2 = temp - 32;
+                    five = 5;
+                    five /= 9;
+                    temp3 = temp2 * five;
+                    temp4 = temp3 + 273.15;
+                    Console.WriteLine(temp + " Fahrenheit to Kelvin is " + temp4 + " Kelvin");
+                    break;
+                case "fahrenheitdegree celsius":
+                    temp2 = temp - 32;
+                    five = 5;
+                    five /= 9;
+                    temp3 = temp2 * five;
+                    Console.WriteLine(temp + " Fahrenheit to Degree Celsius is " + temp3 + " Degree Celsius");
+                    break;
+                case "kelvinfahrenheit":
+                    temp2 = temp - 273.15;
+                    five = 9;
+                    five /= 5;
+                    temp3 = temp2 * five;
+                    temp4 = temp3 + 32;
+                    Console.WriteLine(temp + " Kelvin to Fahrenheit is " + temp4 + " Fahrenheit");
+                    break;
+                case "degree celsiusfahrenheit":
+                    five = 9;
+                    five /= 5;
+                    temp2 = temp * five;
+                    temp3 = temp2 + 32;
+                    Console.WriteLine(temp + " Degree Celsius to Fahrenheit is " + temp3 + " Fahrenheit");
+                    break;
+                case "kelvindegree celsius":
+                    temp2 = temp - 273.15;
+                    Console.WriteLine(temp + " Kelvin to Degree Celsius is " + temp2 + " Degree Celsius");
+                    break;
+                case "degree celsiuskelvin":
+                    temp2 = temp + 273.15;
+                    Console.WriteLine(temp + " Degree Celsius to Kelvin is " + temp2 + " Kelvin");
+                    break;
+                default:
+                    Console.WriteLine("You have misspelled a word wrong, please try again");
+                    break;
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
