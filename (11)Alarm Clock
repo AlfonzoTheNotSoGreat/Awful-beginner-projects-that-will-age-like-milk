@@ -1,0 +1,52 @@
+int time = 0;
+
+System.Timers.Timer timer = new System.Timers.Timer(1000);
+
+Console.WriteLine("Would you like to start the the alarm, yes or no");
+string answer = Console.ReadLine();
+answer = answer.ToLower();
+
+Console.WriteLine("How many hours would you like the alarm to last?");
+int hours = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("How many minutes would you like the alarm to last?");
+int minutes = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("How many seconds would you like the alarm to last?");
+int seconds = Convert.ToInt32(Console.ReadLine());
+
+var date01 = DateTime.Now;
+date01 = date01.AddHours(hours);
+date01 = date01.AddMinutes(minutes);
+date01 = date01.AddSeconds(seconds);
+var date02 = date01.ToString();
+Console.WriteLine("The alarm will stop at " + date02);
+if (answer == "yes")
+{
+    timer.Elapsed += Timer_Elapsed;
+    timer.Enabled = true;
+    timer.AutoReset = true;
+    timer.Start();
+}
+else if (answer == "no")
+{
+
+    timer.Stop();
+}
+
+void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
+{
+    var date03 = DateTime.Now;
+    Console.WriteLine(date03);
+    var date04 = date03.ToString();
+
+    if (date04 == date02)
+    {
+        timer.Stop();
+        Console.WriteLine("The alarm is finished");
+        Console.Beep();
+    }
+
+}
+
+Console.ReadKey();
