@@ -1,0 +1,186 @@
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+using System.Xml;
+
+int totalSum = 0;
+int totalEven = 0;
+long creditCard = 0;
+string name = "";
+
+while (name.Length <= 15 || name.Length >= 17)
+{
+    Console.WriteLine("Please enter in a 16 digit credit card");
+    creditCard = Convert.ToInt64(Console.ReadLine());
+    name = Convert.ToString(creditCard);
+
+}
+
+
+char[] reverse = name.ToCharArray();
+Array.Reverse(reverse);
+reverse[1] = 'x';
+reverse[3] = 'x';
+reverse[5] = 'x';
+reverse[7] = 'x';
+reverse[9] = 'x';
+reverse[11] = 'x';
+reverse[13] = 'x';
+reverse[15] = ' ';
+
+char[] reverse2 = name.ToCharArray();
+Array.Reverse(reverse2);
+reverse2[0] = 'x';
+reverse2[2] = 'x';
+reverse2[4] = 'x';
+reverse2[6] = 'x';
+reverse2[8] = 'x';
+reverse2[10] = 'x';
+reverse2[12] = 'x';
+reverse2[14] = 'x';
+
+totalSum = sumOfOddPlaces(reverse, totalSum, name);
+Console.WriteLine(totalSum);
+
+totalEven = sumOfEvenPlaces(reverse2, name, totalEven);
+Console.WriteLine(totalEven);
+
+int total = totalSum + totalEven;
+Console.WriteLine(total);
+
+double answer = total % 10;
+
+if (answer == 0)
+{
+    Console.WriteLine("This credit card is valid congratualtions ");
+}
+else
+{
+    Console.WriteLine("I'm sorry but this is not a valid creditcard");
+}
+static int sumOfOddPlaces(char[] reverse, int totalSum, string name)
+{
+    string one = Convert.ToString(reverse[0]);
+    int onex = Convert.ToInt32(one);
+    string two = Convert.ToString(reverse[2]);
+    int twox = Convert.ToInt32(two);
+    string three = Convert.ToString(reverse[4]);
+    int threex = Convert.ToInt32(three);
+    string four = Convert.ToString(reverse[6]);
+    int fourx = Convert.ToInt32(four);
+    string five = Convert.ToString(reverse[8]);
+    int fivex = Convert.ToInt32(five);
+    string six = Convert.ToString(reverse[10]);
+    int sixx = Convert.ToInt32(six);
+    string seven = Convert.ToString(reverse[12]);
+    int sevenx = Convert.ToInt32(seven);
+    string eight = Convert.ToString(reverse[14]);
+    int eightx = Convert.ToInt32(eight);
+    totalSum = onex + twox + threex + fourx + fivex + sixx + sevenx + eightx;
+    return totalSum;
+
+}
+
+static int sumOfEvenPlaces(char[] reverse2, string name, int totalEven)
+{
+    string one = Convert.ToString(reverse2[1]);
+    int onex = Convert.ToInt32(one);
+    int onexx = 0;
+    onex *= 2;
+    if (onex >= 10)
+    {
+        one = Convert.ToString(onex);
+        string one1 = one.Substring(0, 1);
+        string one2 = one.Substring(1);
+        onex = Convert.ToInt32(one1);
+        onexx = Convert.ToInt32(one2);
+    }
+    string two = Convert.ToString(reverse2[3]);
+    int twox = Convert.ToInt32(two);
+    int twoxx = 0;
+    twox *= 2;
+    if (twox >= 10)
+    {
+        two = Convert.ToString(twox);
+        string two1 = two.Substring(0, 1);
+        string two2 = two.Substring(1);
+        twox = Convert.ToInt32(two1);
+        twoxx = Convert.ToInt32(two2);
+    }
+    string three = Convert.ToString(reverse2[5]);
+    int threex = Convert.ToInt32(three);
+    int threexx = 0;
+    threex *= 2;
+    if (threex >= 10)
+    {
+        three = Convert.ToString(threex);
+        string three1 = three.Substring(0, 1);
+        string three2 = three.Substring(1);
+        threex = Convert.ToInt32(three1);
+        threexx = Convert.ToInt32(three2);
+    }
+    string four = Convert.ToString(reverse2[7]);
+    int fourx = Convert.ToInt32(four);
+    int fourxx = 0;
+    fourx *= 2;
+    if (fourx >= 10)
+    {
+        four = Convert.ToString(fourx);
+        string four1 = four.Substring(0, 1);
+        string four2 = four.Substring(1);
+        fourx = Convert.ToInt32(four1);
+        fourxx = Convert.ToInt32(four2);
+    }
+    string five = Convert.ToString(reverse2[9]);
+    int fivex = Convert.ToInt32(five);
+    int fivexx = 0;
+    fivex *= 2;
+    if (fivex >= 10)
+    {
+        five = Convert.ToString(fivex);
+        string five1 = five.Substring(0, 1);
+        string five2 = five.Substring(1);
+        fivex = Convert.ToInt32(five1);
+        fivexx = Convert.ToInt32(five2);
+    }
+    string six = Convert.ToString(reverse2[11]);
+    int sixx = Convert.ToInt32(six);
+    int sixxx = 0;
+    sixx *= 2;
+    if (sixx >= 10)
+    {
+        six = Convert.ToString(sixx);
+        string six1 = six.Substring(0, 1);
+        string six2 = six.Substring(1);
+        sixx = Convert.ToInt32(six1);
+        sixxx = Convert.ToInt32(six2);
+    }
+    string seven = Convert.ToString(reverse2[13]);
+    int sevenx = Convert.ToInt32(seven);
+    int sevenxx = 0;
+    sevenx *= 2;
+    if (sevenx >= 10)
+    {
+        seven = Convert.ToString(sevenx);
+        string seven1 = seven.Substring(0, 1);
+        string seven2 = seven.Substring(1);
+        sevenx = Convert.ToInt32(seven1);
+        sevenxx = Convert.ToInt32(seven2);
+    }
+    string eight = Convert.ToString(reverse2[15]);
+    int eightx = Convert.ToInt32(eight);
+    int eightxx = 0;
+    eightx *= 2;
+    if (eightx >= 10)
+    {
+        eight = Convert.ToString(eightx);
+        string eigth1 = eight.Substring(0, 1);
+        string eight2 = eight.Substring(1);
+        eightx = Convert.ToInt32(eigth1);
+        eightxx = Convert.ToInt32(eight2);
+    }
+    totalEven = onex + onexx + twox + twoxx + threex + threexx + fourx + fourxx + fivex + fivexx + sixx + sixxx + sevenx + sevenxx + eightx + eightxx;
+    return totalEven;
+}
+
+
+Console.ReadKey();
