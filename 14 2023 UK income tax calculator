@@ -1,0 +1,57 @@
+double tax = 0;
+double income = 0;
+double personalAllowence = 12570;
+
+Console.WriteLine("How much do you earn in a year?");
+tax = Convert.ToDouble(Console.ReadLine());
+
+income = tax;
+if (tax <= 12570)
+{
+    Console.WriteLine("You owe 0 income tax as £" + personalAllowence + " is your Personal allowance, and you have earned " + tax);
+}
+else if (tax <= 50270)
+{
+    income = income - personalAllowence;
+    income = income * 0.20;
+    Console.WriteLine("You have a personal allowence of £" + personalAllowence + " and you would pay £" + income + " in tax");
+}
+else if (tax <= 100000)
+{
+    
+    income = 50270;
+    income = income - personalAllowence;
+    income *= 0.20;
+    double HigherIncome = tax - 50270;
+    HigherIncome *= 0.40;
+    double totalIncome = HigherIncome + income;
+    Console.WriteLine("You have a personal allowence of £" + personalAllowence + " and you would pay £" + totalIncome + " in tax");
+}
+else if (tax <= 125140)
+{
+    int pA = Convert.ToInt32(tax - 100000);
+    pA /= 2;
+    personalAllowence -= pA;
+    income = 37700;
+    income *= 0.20;
+    double takeAway = 50270 - pA;
+    double HigherIncome = tax - takeAway;
+    HigherIncome *= 0.40;
+    double totalIncome = HigherIncome + income;
+    Console.WriteLine("You have a personal allowence of £" + personalAllowence + " and you would pay £" + totalIncome + " in tax");
+}
+else if (tax >= 125141)
+{
+    int pA = Convert.ToInt32(tax - 100000);
+    pA /= 2;
+    personalAllowence -= pA;
+    income = 37700;
+    income *= 0.20;
+    double HigherIncome = 87440;
+    HigherIncome *= 0.40;
+    double take = tax - 125140;
+    take *= 0.45;
+    double totalIncome = HigherIncome + income + take;
+    Console.WriteLine("You have a personal allowence of £" + personalAllowence + " and you would pay £" + totalIncome + " in tax");
+}
+Console.ReadKey();
