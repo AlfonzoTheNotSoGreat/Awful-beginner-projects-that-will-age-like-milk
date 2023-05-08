@@ -24,7 +24,7 @@ while (n > 0)
     n--;
 }
 
-Console.WriteLine("The factoral of " + info + " is " + factor);
+Console.WriteLine("The factoral of " + info + "! is " + factor);
 
 
 Console.ReadKey();
