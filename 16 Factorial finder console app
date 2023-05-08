@@ -1,0 +1,30 @@
+Console.WriteLine("Welcome to factorial finder. Please enter a positive integer factorial you would like to find below");
+double factor = Convert.ToDouble(Console.ReadLine());
+double info = factor;
+double n = factor - 1;
+
+while (factor < 0)
+{
+    Console.WriteLine("Please enter a factorial with a positive value you would like to find below");
+     factor = Convert.ToDouble(Console.ReadLine());
+     info = factor;
+     n = factor - 1;
+}
+
+
+if (factor == 0)
+{
+    factor = 1;
+}
+
+
+while (n > 0) 
+{
+    factor *= n;
+    n--;
+}
+
+Console.WriteLine("The factoral of " + info + " is " + factor);
+
+
+Console.ReadKey();
