@@ -1,0 +1,74 @@
+using System.Xml.Linq;
+
+string split = string.Empty;
+string splited = string.Empty;
+string splitedTwo = string.Empty;
+string splitedThree = string.Empty;
+
+bool finished = false;
+
+Console.WriteLine("Please enter a positive int to find a happy number up to 1000");
+int enter = Convert.ToInt32(Console.ReadLine());
+int happy = enter;
+
+while (enter > 1 || finished == false)
+{
+
+   
+    enter = enter;
+
+    if (enter < 10)
+    {
+        enter *= enter;
+    }
+
+    if (enter >= 10 && enter <= 99)
+    {
+        split = enter.ToString();
+        splited = split.Substring(0, 1);
+        splitedTwo = split.Substring(1);
+
+        int one = Convert.ToInt32(splited);
+        int two = Convert.ToInt32(splitedTwo);
+        one *= one;
+        two *= two;
+        enter = one + two;
+
+    }
+    if (enter >= 100)
+    {
+        split = enter.ToString();
+        splited = split.Substring(0, 1);
+        splitedTwo = split.Substring(1, 1);
+        splitedThree = split.Substring(2);
+
+        int one = Convert.ToInt32(splited);
+        int two = Convert.ToInt32(splitedTwo);
+        int three = Convert.ToInt32(splitedThree);
+        one *= one;
+        two *= two;
+        three *= three;
+        enter = one + two + three;
+    }
+
+    if (enter == 1)
+    {
+        finished = true;
+    }
+    if (enter <= 0)
+    {
+        finished = true;
+    }
+}
+
+if (enter == 1 )
+{
+    Console.WriteLine(happy + " is a happy number congratulations");
+
+}
+else 
+{ 
+    Console.WriteLine("This number is not a happy number");
+}
+
+Console.ReadKey();
