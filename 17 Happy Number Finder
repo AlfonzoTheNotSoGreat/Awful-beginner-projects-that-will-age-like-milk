@@ -68,7 +68,7 @@ if (enter == 1 )
 }
 else 
 { 
-    Console.WriteLine("This number is not a happy number");
+    Console.WriteLine(happy + " is number is not a happy number");
 }
 
 Console.ReadKey();
