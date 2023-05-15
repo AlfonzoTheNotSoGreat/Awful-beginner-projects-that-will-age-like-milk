@@ -1,0 +1,65 @@
+string[] singleDigits = {"One ", "Two", "Three ", "Four ", "Five ", "Six ", "Seven ", "Eight ", "Nine ", "Ten ", "Eleven ", "Twelve ", "Thirteen ", "Fourteen ", "Fifthteen ", "Sixteen ", "Seventeen", "Eighteen", "Nineteen", "Twenty "  };
+string[] doubleDigits = {"Ten ","Twenty ", "Thirty ", "Fourty ", "fifty ", "Sixty ", "Seventy ", "Eighty", "Ninety"};
+string[] tripleDigits = { "One Hundred ", "Two Hundred ", "Three Hundred ", "Four Hundred ", "Five Hundred ", "Six Hundred ", "Seven Hundred ", "Eight Hundred ", "Nine Hundred "};
+
+Console.WriteLine("What Number Between zero up to One Thousand would you like to find?");
+int num = Convert.ToInt32(Console.ReadLine());
+int num1 = 0;
+int num2 = 0;
+int num3 = 0;
+string mainNum = "";
+string letter1 = "";
+string letterOne = "";
+string letter2 = "";
+string letter3 = "";
+
+if (num == 0)
+{ Console.WriteLine("The number you're looking for is zero"); }
+else if (num < 0)
+{
+    Console.WriteLine("This program has a limit of One Thousand and does not print negative numbers");
+}
+else if (num <= 20)
+{ Console.WriteLine("The number you're looking for is " + singleDigits[num - 1]); }
+else if (num <= 99)
+{ 
+    mainNum = num.ToString();
+    letter1 = mainNum.Substring(0, 1);
+    letter2 = mainNum.Substring(1);
+    num1 = Convert.ToInt32(letter1);
+    num2 = Convert.ToInt32(letter2);
+    Console.WriteLine("The number you're looking for is " + doubleDigits[num1 - 1] + singleDigits[num2 - 1]); 
+}
+else if (num <= 999)
+{
+    mainNum = num.ToString();
+    letterOne = mainNum.Substring(1, 2);
+    int numSecret = Convert.ToInt32(letterOne);
+    if (numSecret <= 19)
+    {
+        letter1 = mainNum.Substring(0, 1);
+        num1 = Convert.ToInt32(letter1);
+        Console.WriteLine("The number you're looking for is " + tripleDigits[num1 - 1] + singleDigits[numSecret - 1]);
+
+    }
+    else
+    {
+        letter1 = mainNum.Substring(0, 1);
+        letter2 = mainNum.Substring(1, 1);
+        letter3 = mainNum.Substring(2);
+        num1 = Convert.ToInt32(letter1);
+        num2 = Convert.ToInt32(letter2);
+        num3 = Convert.ToInt32(letter3);
+        Console.WriteLine("The number you're looking for is " + tripleDigits[num1 - 1] + doubleDigits[num2 - 1] + singleDigits[num3 - 1]);
+    }
+}
+else if (num == 1000)
+{
+    Console.WriteLine("One Thousand");
+}
+else
+{
+    Console.WriteLine("This program has a limit of One Thousand and does not print negative numbers");
+}
+
+Console.ReadKey();
